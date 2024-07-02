@@ -10,7 +10,7 @@ const WEATHER_API_KEY = process.env.WEATHER_API_KEY;
 const IPAPI_URL =  "https://ipapi.co";
 
 app.get("/api/hello", async (req, res) => {
-  const name = req.query.visitor_name;
+  const name = req.query.visitor_name || "User";
   let ip = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
 
   const ipv4Match = ip.match(/(\d+\.\d+\.\d+\.\d+)/);
